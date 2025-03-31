@@ -11,7 +11,7 @@ function fT(arr){
 }
 async function handling(){
 	let firstP=await array()
-	let secondP=await ft(firstP)
+	let secondP=await fT(firstP)
 	//alert(firstP)
 }
 handling()
