@@ -5,13 +5,30 @@ function array(){
 }
 function fT(arr){
 	arr=arr.filter(e=>e%2==0)
-	setTimeout(()=>output.innerHTML=arr,1000)
-	//arr=arr.map(e=>e*2)
-	setTimeout(()=>output.innerHTML=arr,2000)
+	return new Promise((res,rej)=>{
+		setTimeout(()=>{
+		output.innerHTML=arr
+		res(arr)
+		},1000)
+	})
+	
+	
+}
+function fP(arr){
+	arr=arr.map(e=>e*2)
+	
+	return new Promise((res,rej)=>{
+		setTimeout(()=>{
+		output.innerHTML=arr
+		res(arr)
+		},2000)
+	})
 }
 async function handling(){
 	let firstP=await array()
 	let secondP=await fT(firstP)
+	let thirdP=await fP(secondP)
+	
 	//alert(firstP)
 }
 handling()
