@@ -5,9 +5,9 @@ function array(){
 }
 function fT(arr){
 	arr=arr.filter(e=>e%2==0)
-	setTimeout(()=>output.textContent=arr,1000)
+	setTimeout(()=>output.innerHTML=arr,1000)
 	arr=arr.map(e=>e*2)
-	setTimeout(()=>output.textContent=arr,2000)
+	setTimeout(()=>output.innerHTML=arr,2000)
 }
 async function handling(){
 	let firstP=await array()
